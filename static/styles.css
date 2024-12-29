@@ -1,0 +1,35 @@
+/* Thêm style cho nút xóa tin nhắn */
+.message-info .delete-message {
+    background: none;
+    border: none;
+    color: #95a5a6;
+    cursor: pointer;
+    padding: 2px 5px;
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.message:hover .delete-message {
+    opacity: 1;
+}
+
+.message-info .delete-message:hover {
+    color: #e74c3c;
+}
+
+/* Thêm animation khi xóa tin nhắn */
+.message.deleting {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}

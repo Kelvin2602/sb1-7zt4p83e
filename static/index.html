@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Chat Nội bộ</title>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <img src="/static/default-avatar.png" alt="Avatar" class="user-avatar" id="userAvatar">
+                <div class="user-name" id="userName">Đang tải...</div>
+                <div class="user-role" id="userRole">Đang tải...</div>
+            </div>
+            
+            <ul class="room-list" id="roomList">
+                <!-- Rooms will be populated dynamically -->
+            </ul>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="room-info">
+                    <h2 id="currentRoom">Phòng chung</h2>
+                    <div class="room-description" id="roomDescription">
+                        Phòng chat chung cho mọi người
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Controls (only visible for admins) -->
+            <div class="admin-controls" id="adminControls" style="display: none;">
+                <button onclick="deleteRoom()">Xóa phòng</button>
+                <button onclick="manageUsers()">Quản lý người dùng</button>
+            </div>
+
+            <div class="messages" id="messages"></div>
+
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Nhập tin nhắn...">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>
